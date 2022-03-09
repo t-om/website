@@ -1,12 +1,12 @@
 module.exports = {
     plugins: [  ],
-    purge: {
-        content: [ './src/**/*.{js,jsx,ts,tsx}' ],
-        options: {
-            safelist: [  ]
-        }
+    content: [ './src/**/*.{js,jsx,ts,tsx}' ],
+    safelist: [  ],
+    ...process.env.NODE_ENV === 'development' && {
+        safelist: [
+            { pattern: /.*/ }
+        ]
     },
-    darkMode: false,
     theme: {
         fontFamily: {
             // 'sans': [ 'Avenir', 'Avenir Next', 'Nunito', 'sans-serif', 'ui-sans-serif', 'system-ui' ]
@@ -16,11 +16,12 @@ module.exports = {
                 '3xl': "1792px"
             },
             colors: {
-                'primary': "#132D53",
-                'secondary': "#169A34",
-                'highlight': "#FFF629",
-                'light': "#F4F6F9",
-                'dark': "#00031E",
+                'primary': "#2C404D",
+                'primary-light': "#799DB3",
+                'secondary': "#8F6D6D",
+                'secondary-light': "#FDC0B6",
+                'light': "#F5FCFB",
+                'dark': "#1B1C1C",
             },
             justifyContent: {
                 'safe-center': "safe center"

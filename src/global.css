@@ -3,3 +3,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body, main {
+    @apply
+        w-screen h-screen overflow-hidden
+        bg-light text-dark;
+}
+
+nav li:hover > div {
+    @apply visible;
+}
